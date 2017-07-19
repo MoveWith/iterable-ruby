@@ -1,7 +1,6 @@
 module Iterable
-  class ListDetails < Hashie::Dash
-    include Hashie::Extensions::Dash::Coercion
-    property :id
+  class ListDetails < Iterable::Base
+    property :id, coerce: Integer
     property :name
     property :createdAt
     property :listType

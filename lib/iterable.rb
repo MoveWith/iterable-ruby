@@ -11,6 +11,7 @@ module Iterable
   autoload :VERSION, 'iterable/version'
 
   # Models
+  autoload :Base, 'iterable/models/base'
   autoload :User, 'iterable/models/user'
   autoload :DataFields, 'iterable/models/data_fields'
   autoload :ListDetails, 'iterable/models/list_details'

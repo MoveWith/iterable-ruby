@@ -13,12 +13,11 @@
 #   "dataFields": "Map[string, object]"
 # }
 module Iterable
-  class CommerceItem < Hashie::Dash
-    include Hashie::Extensions::Dash::Coercion
+  class CommerceItem < Iterable::Base
     property :id, required: true
     property :name, required: true
-    property :price, required: true
-    property :quantity, required: true
+    property :price, required: true, coerce: Float
+    property :quantity, required: true, coerce: Integer
 
     property :sku
     property :description

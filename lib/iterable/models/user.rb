@@ -1,9 +1,8 @@
 module Iterable
-  class User < Hashie::Dash
-    include Hashie::Extensions::Dash::Coercion
-    property :email, required: true
+  class User < Iterable::Base
+    property :email, required: true, coerce: String
 
-    property :userId
+    property :userId, coerce: String
     
     property :dataFields, coerce: DataFields
   end

@@ -1,8 +1,8 @@
 # Iterable
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/iterable/api`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Build Status](https://travis-ci.org/revvco/iterable-api?branch=master)](https://travis-ci.org/revvco/iterable-api) [![Gem Version](https://badge.fury.io/rb/iterable-api)](https://badge.fury.io/rb/iterable-api) [![Code Climate](https://codeclimate.com/github/revvco/iterable-api/badges/gpa.svg)](https://codeclimate.com/github/revvco/iterable-api)
 
-TODO: Delete this and the text above, and describe your gem
+A Ruby wrapper for the Iterable API. Documentation can be found [here](https://api.iterable.com/api/docs).
 
 ## Installation
 
@@ -22,7 +22,33 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Client
+
+```ruby
+require 'iterable-api`
+
+client = Iterable::Api.new('YOUR_API_KEY')
+client.lists
+```
+
+### Supported Endpoints
+
+All responses are sent back as `Hashie` objects
+
+#### Lists
+
+* `lists` - return all lists
+* `lists/subscribe` -  subscribe a user to a list
+
+#### Users
+
+* `users/{email}` - find a user by email
+* `users/{id}` - find a user by id
+* `users/update` - update a user
+
+#### Commerce
+
+* `commerce/track_purchase` - create a new CommerceItem
 
 ## Development
 

@@ -13,7 +13,7 @@ module Iterable
         # @param [Hash] params
         # @return [String] query string
         def http_build_query(params)
-          params.collect{ |k,v| "#{k.to_s}=#{encode(v.to_s)}" }.reverse.join('&')
+          params.collect{ |k,v| "#{k}=#{encode(v)}" }.reverse.join('&')
         end
 
         # Escape special characters

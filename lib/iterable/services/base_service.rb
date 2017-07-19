@@ -59,7 +59,7 @@ module Iterable
           else
             params ||= {}
           end
-          url += '?' + Util::Helpers.http_build_query(params)
+          url + '?' + Util::Helpers.http_build_query(params)
         end
       end
     end

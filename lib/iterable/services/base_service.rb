@@ -12,6 +12,20 @@ module Iterable
 
         protected
 
+        def get(path, params = {}, response_type = Iterable::Responses::General)
+          url = URI::join(Util::Config.get('endpoints.base_url'), path)
+          url = build_url(url, params)
+          response = RestClient.get(url, get_headers())
+          Iterable::Responses::Lists.new JSON.parse(response.body)
+        end
+
+        def post(path, body = {}, params = {}, response_type = Iterable::Responses::General)
+          url = URI::join(Util::Config.get('endpoints.base_url'), path)
+          url = build_url(url, params)
+          response = RestClient.post(url, body.to_json, get_headers())
+          response_type.new JSON.parse(response.body)
+        end
+
         # Return required headers for making an http request with Iterable
         # @param [String] content_type - The MIME type of the body of the request, default is 'application/json'
         # @return [Hash] - authorization headers

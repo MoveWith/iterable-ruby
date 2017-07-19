@@ -9,18 +9,11 @@ module Iterable
     class ListService < BaseService
       class << self
         def all
-          url = Util::Config.get('endpoints.base_url') + Util::Config.get('endpoints.lists')
-          url = build_url(url)
-          response = RestClient.get(url, get_headers())
-          Iterable::Responses::Lists.new JSON.parse(response.body)
+          get(Util::Config.get('endpoints.lists'), nil, Iterable::Responses::Lists)
         end
 
         def subscribe(list_id, subscribers)
-          request = Iterable::Requests::Subscribe.new(listId: list_id, subscribers: subscribers)
-          url = Util::Config.get('endpoints.base_url') + Util::Config.get('endpoints.lists_subscribe')
-          url = build_url(url, params)
-          response = RestClient.post(url, request.to_json, get_headers())
-          Iterable::Responses::Subscribe.new JSON.parse(response.body)
+          post(Util::Config.get('endpoints.lists_subscribe'), request, nil, Iterable::Responses::Subscribe)
         end
       end
     end

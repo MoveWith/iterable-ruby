@@ -4,8 +4,8 @@ describe Iterable::User do
   let(:email) { 'bob@example.org' }
   subject { Iterable::User.new(email: email) }
 
-  it 'is Dash' do 
-    expect(subject.is_a?(Hashie::Dash)).to be_truthy
+  it 'is Iterable::Base' do 
+    expect(subject.is_a?(Iterable::Base)).to be_truthy
   end
 
   it 'has email' do 

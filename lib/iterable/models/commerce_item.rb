@@ -14,7 +14,7 @@
 # }
 module Iterable
   class CommerceItem < Iterable::Base
-    property :id, required: true
+    property :id, required: true, coerce: String
     property :name, required: true
     property :price, required: true, coerce: Float
     property :quantity, required: true, coerce: Integer

@@ -11,9 +11,8 @@
 # }
 module Iterable
   module Requests
-    class Subscribe < Hashie::Dash
-      include Hashie::Extensions::Dash::Coercion
-      property :listId
+    class Subscribe < Iterable::Base
+      property :listId, coerce: Integer
       property :subscribers, coerce: Array[Iterable::User]
     end
   end

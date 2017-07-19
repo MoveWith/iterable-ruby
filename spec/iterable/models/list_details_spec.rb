@@ -3,8 +3,8 @@ require 'spec_helper'
 describe Iterable::ListDetails do
   subject { Iterable::ListDetails.new }
 
-  it 'is Dash' do 
-    expect(subject.is_a?(Hashie::Dash)).to be_truthy
+  it 'is Iterable::Base' do 
+    expect(subject.is_a?(Iterable::Base)).to be_truthy
   end
 
   it 'has id' do 

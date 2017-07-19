@@ -7,12 +7,12 @@ describe Iterable::CommerceItem do
   let(:quantity) { 10 }
   subject { Iterable::CommerceItem.new(id: id, name: name, price: price, quantity: quantity) }
 
-  it 'is Dash' do 
-    expect(subject.is_a?(Hashie::Dash)).to be_truthy
+  it 'is Iterable::Base' do 
+    expect(subject.is_a?(Iterable::Base)).to be_truthy
   end
 
   it 'has id' do 
-    expect(subject.id).to eq id
+    expect(subject.id).to eq id.to_s # coerced to string
   end
 
   it 'has name' do 
@@ -78,6 +78,32 @@ describe Iterable::CommerceItem do
     expect(subject.dataFields).to be_nil
     subject.dataFields = {key: 'value'}
     expect(subject.dataFields).to be_truthy
+    expect(subject.dataFields[:key]).to eq 'value'
+  end
+
+  it 'can parse from json' do 
+    json_string = {
+      id: "1",
+      name: name,
+      price: price,
+      quantity: quantity,
+      sku: 'sku',
+      description: 'description',
+      imageUrl: 'imageUrl',
+      url: 'url',
+      categories: ['one', 'two'],
+      dataFields: {key: 'value'},
+    }.to_json
+    subject = Iterable::CommerceItem.new(JSON.parse(json_string))
+    expect(subject.id).to eq id.to_s
+    expect(subject.name).to eq name
+    expect(subject.price).to eq price
+    expect(subject.quantity).to eq quantity
+    expect(subject.sku).to eq 'sku'
+    expect(subject.description).to eq 'description'
+    expect(subject.imageUrl).to eq 'imageUrl'
+    expect(subject.url).to eq 'url'
+    expect(subject.categories).to include 'one'
     expect(subject.dataFields[:key]).to eq 'value'
   end
 end

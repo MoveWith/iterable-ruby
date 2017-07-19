@@ -7,7 +7,7 @@ require 'openssl'
 require 'base64'
 
 module Iterable
-  # autoload :Api, 'iterable/api'
+  autoload :Api, 'iterable/api'
   autoload :VERSION, 'iterable/version'
 
   # Models

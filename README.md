@@ -9,7 +9,7 @@ A Ruby wrapper for the Iterable API. Documentation can be found [here](https://a
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'iterable-api'
+gem 'iterable-api', require: 'iterable'
 ```
 
 And then execute:

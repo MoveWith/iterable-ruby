@@ -27,6 +27,10 @@ module Iterable
       Services::ListService.subscribe(list_id, subscribers)
     end
 
+    def list_find_by_id(list_id)
+      Services::ListService.find_by_id(list_id)
+    end
+
     # 
     # User Services
     # 

@@ -13,14 +13,14 @@ module Iterable
         protected
 
         def get(path, params = {}, response_type = Iterable::Responses::General)
-          url = URI::join(Util::Config.get('endpoints.base_url'), path)
+          url = URI::join(Util::Config.get('endpoints.base_url'), path).to_s
           url = build_url(url, params)
           response = RestClient.get(url, get_headers())
           response_type.new JSON.parse(response.body)
         end
 
         def post(path, body = {}, params = {}, response_type = Iterable::Responses::General)
-          url = URI::join(Util::Config.get('endpoints.base_url'), path)
+          url = URI::join(Util::Config.get('endpoints.base_url'), path).to_s
           url = build_url(url, params)
           response = RestClient.post(url, body.to_json, get_headers())
           response_type.new JSON.parse(response.body)

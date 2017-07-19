@@ -1,6 +1,6 @@
 # Iterable
 
-[![Build Status](https://travis-ci.org/revvco/iterable-api?branch=master)](https://travis-ci.org/revvco/iterable-api) [![Gem Version](https://badge.fury.io/rb/iterable-api)](https://badge.fury.io/rb/iterable-api)  [![Code Climate](https://codeclimate.com/github/revvco/iterable-api/badges/gpa.svg)](https://codeclimate.com/github/revvco/iterable-api)
+[![Build Status](https://travis-ci.org/revvco/iterable-api.svg?branch=master)](https://travis-ci.org/revvco/iterable-api) [![Gem Version](https://badge.fury.io/rb/iterable-api.svg)](https://badge.fury.io/rb/iterable-api) [![Code Climate](https://codeclimate.com/github/revvco/iterable-api/badges/gpa.svg)](https://codeclimate.com/github/revvco/iterable-api)
 
 A Ruby wrapper for the Iterable API. Documentation can be found [here](https://api.iterable.com/api/docs).
 

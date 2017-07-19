@@ -13,6 +13,7 @@ module Iterable
         end
 
         def subscribe(list_id, subscribers)
+          request = Iterable::Requests::Subscribe.new(listId: list_id, subscribers: subscribers)
           post(Util::Config.get('endpoints.lists_subscribe'), request, nil, Iterable::Responses::Subscribe)
         end
       end

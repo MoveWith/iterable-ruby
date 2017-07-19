@@ -43,7 +43,7 @@ module Iterable
       class << self
         attr_accessor :props
 
-         def configure 
+        def configure 
           yield props if block_given?
         end
 

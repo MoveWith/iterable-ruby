@@ -16,7 +16,7 @@ module Iterable
           url = URI::join(Util::Config.get('endpoints.base_url'), path)
           url = build_url(url, params)
           response = RestClient.get(url, get_headers())
-          Iterable::Responses::Lists.new JSON.parse(response.body)
+          response_type.new JSON.parse(response.body)
         end
 
         def post(path, body = {}, params = {}, response_type = Iterable::Responses::General)

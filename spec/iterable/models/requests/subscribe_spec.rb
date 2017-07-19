@@ -1,14 +1,13 @@
 require 'spec_helper'
 
 describe Iterable::Requests::Subscribe do
-  subject { Iterable::Requests::Subscribe.new }
+  subject { Iterable::Requests::Subscribe.new(listId: 1) }
 
   it 'is Iterable::Base' do 
     expect(subject.is_a?(Iterable::Base)).to be_truthy
   end
 
   it 'has listId' do 
-    expect(subject.listId).to be_nil
     subject.listId = 1
     expect(subject.listId).to eq 1
     subject.listId = "1"
@@ -25,18 +24,7 @@ describe Iterable::Requests::Subscribe do
   end
 
   it 'can parse from json' do 
-    json_string = {
-      listId: "1",
-      subscribers: [
-        {
-          email: 'bob@example.org',
-          userId: 1,
-          dataFields: {
-            key: 'value'
-          }
-        }
-      ]
-    }.to_json #
+    json_string = load_file('request_subscribe.json')
     subject = Iterable::Requests::Subscribe.new(JSON.parse(json_string))
     expect(subject.listId).to eq 1
     first_subscriber = subject.subscribers.first

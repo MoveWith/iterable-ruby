@@ -35,17 +35,11 @@ describe Iterable::ListDetails do
   end
 
   it 'can parse from json' do 
-    time = Time.now.to_s
-    json_string = {
-      id: "1",
-      name: 'name',
-      createdAt: time,
-      listType: 'listType'
-    }.to_json
+    json_string = load_file('list_details.json')
     subject = Iterable::ListDetails.new(JSON.parse(json_string))
     expect(subject.id).to eq 1
-    expect(subject.name).to eq "name"
-    expect(subject.createdAt).to eq time
-    expect(subject.listType).to eq "listType"
+    expect(subject.name).to eq "ListName"
+    expect(subject.createdAt).to eq "2017-07-19 16:09:38 -0400"
+    expect(subject.listType).to eq "MyListType"
   end
 end

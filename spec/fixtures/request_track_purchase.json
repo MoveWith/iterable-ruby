@@ -1,0 +1,26 @@
+{
+  "user": {
+    "email": "bob@example.org",
+    "userId": "1",
+    "dataFields":{"key":"value"}
+  },
+  "items": [
+    {
+      "id":"1",
+      "name":"ItemName",
+      "price":1334,
+      "quantity":3,
+      "sku":"sku",
+      "description":"description",
+      "imageUrl":"http://image.com",
+      "url":"http://google.com",
+      "categories":["one","two"],
+      "dataFields":{"key":"value"}
+    }
+  ],
+  "campaignId": 0,
+  "templateId": 0,
+  "total": 0,
+  "createdAt": 0,
+  "dataFields":{"key":"value"}
+}

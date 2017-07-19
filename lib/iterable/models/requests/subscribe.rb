@@ -12,7 +12,7 @@
 module Iterable
   module Requests
     class Subscribe < Iterable::Base
-      property :listId, coerce: Integer
+      property :listId, coerce: Integer, required: true
       property :subscribers, coerce: Array[Iterable::User]
     end
   end

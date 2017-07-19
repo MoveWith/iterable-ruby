@@ -26,13 +26,7 @@ describe Iterable::User do
   end
 
   it 'can parse from json' do 
-    json_string = {
-      email: email,
-      userId: 1,
-      dataFields: {
-        key: 'value'
-      }
-    }.to_json
+    json_string = load_file('user.json')
     output = Iterable::User.new(JSON.parse(json_string))
     expect(output.email).to eq email
     expect(output.userId).to eq "1"

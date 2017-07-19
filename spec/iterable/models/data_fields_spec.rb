@@ -8,10 +8,7 @@ describe Iterable::DataFields do
   end
 
   it 'can parse from json' do 
-    json_string = {
-      key1: 'value1',
-      key2: 'value2'
-    }.to_json
+    json_string = load_file('data_fields.json')
     subject = Iterable::DataFields.new(JSON.parse(json_string))
     expect(subject[:key1]).to eq 'value1'
     expect(subject[:key2]).to eq 'value2'

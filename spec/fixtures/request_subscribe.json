@@ -1,0 +1,12 @@
+{
+  "listId": "1",
+  "subscribers":[
+    {
+      "email": "bob@example.org",
+      "userId": "1",
+      "dataFields":{
+        "key": "value"
+      }
+    }
+  ]
+}

@@ -82,27 +82,16 @@ describe Iterable::CommerceItem do
   end
 
   it 'can parse from json' do 
-    json_string = {
-      id: "1",
-      name: name,
-      price: price,
-      quantity: quantity,
-      sku: 'sku',
-      description: 'description',
-      imageUrl: 'imageUrl',
-      url: 'url',
-      categories: ['one', 'two'],
-      dataFields: {key: 'value'},
-    }.to_json
+    json_string = load_file('commerce_item.json')
     subject = Iterable::CommerceItem.new(JSON.parse(json_string))
     expect(subject.id).to eq id.to_s
-    expect(subject.name).to eq name
-    expect(subject.price).to eq price
-    expect(subject.quantity).to eq quantity
+    expect(subject.name).to eq 'ItemName'
+    expect(subject.price).to eq 1334
+    expect(subject.quantity).to eq 3
     expect(subject.sku).to eq 'sku'
     expect(subject.description).to eq 'description'
-    expect(subject.imageUrl).to eq 'imageUrl'
-    expect(subject.url).to eq 'url'
+    expect(subject.imageUrl).to eq 'http://image.com'
+    expect(subject.url).to eq 'http://google.com'
     expect(subject.categories).to include 'one'
     expect(subject.dataFields[:key]).to eq 'value'
   end

@@ -1,0 +1,13 @@
+{
+  "id":"1",
+  "name":"ItemName",
+  "price":1334,
+  "quantity":3,
+  "sku":"sku",
+  "description":"description",
+  "imageUrl":"http://image.com",
+  "url":"http://google.com",
+  "categories":["one",
+    "two"],
+  "dataFields":{"key":"value"}
+}

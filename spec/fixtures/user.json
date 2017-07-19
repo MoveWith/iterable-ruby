@@ -1,0 +1,7 @@
+{
+  "email": "bob@example.org",
+  "userId": "1",
+  "dataFields":{
+    "key": "value"
+  }
+}

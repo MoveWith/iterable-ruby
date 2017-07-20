@@ -18,6 +18,7 @@ module Iterable
   autoload :CommerceItem, 'iterable/models/commerce_item'
 
   module Responses
+    autoload :Error, 'iterable/models/responses/error'
     autoload :General, 'iterable/models/responses/general'
     autoload :Lists, 'iterable/models/responses/lists'
     autoload :Subscribe, 'iterable/models/responses/subscribe'
@@ -35,6 +36,10 @@ module Iterable
     autoload :CommerceService, 'iterable/services/commerce_service'
     autoload :ListService, 'iterable/services/list_service'
     autoload :UserService, 'iterable/services/user_service'
+  end  
+
+  module Exceptions
+    autoload :ServiceException, 'iterable/exceptions/service_exception'
   end  
 
   module Util

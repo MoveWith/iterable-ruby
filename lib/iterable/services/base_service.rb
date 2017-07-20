@@ -16,14 +16,26 @@ module Iterable
           url = URI::join(Util::Config.get('endpoints.base_url'), path).to_s
           url = build_url(url, params)
           response = RestClient.get(url, get_headers())
-          response_type.new JSON.parse(response.body)
+          begin
+            response_type.new JSON.parse(response.body)
+          rescue
+            Hashie::Mash.new JSON.parse(response.body)
+          end
+        rescue RestClient::BadRequest => e
+          Iterable::Responses::Error.new(response: e.response.body, msg: e.message, code: 400)
         end
 
         def post(path, body = {}, params = {}, response_type = Iterable::Responses::General)
           url = URI::join(Util::Config.get('endpoints.base_url'), path).to_s
           url = build_url(url, params)
           response = RestClient.post(url, body.to_json, get_headers())
-          response_type.new JSON.parse(response.body)
+          begin
+            response_type.new JSON.parse(response.body)
+          rescue
+            Hashie::Mash.new JSON.parse(response.body)
+          end
+        rescue RestClient::BadRequest => e
+          Iterable::Responses::Error.new(response: e.response.body, msg: e.message, code: 400)
         end
 
         # Return required headers for making an http request with Iterable

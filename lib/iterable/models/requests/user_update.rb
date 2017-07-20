@@ -12,7 +12,7 @@
 module Iterable
   module Requests
     class UserUpdate < Iterable::User
-      property :mergeNestedObjects
+      property :mergeNestedObjects, default: false
     end
   end
 end

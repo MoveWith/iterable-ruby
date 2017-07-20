@@ -1,0 +1,6 @@
+{
+  "msg": "400 Bad Request",
+  "code": 400,
+  "response": "User does not exist with that ID!",
+  "params":{"key":"value"}
+}

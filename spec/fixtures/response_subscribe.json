@@ -1,0 +1,7 @@
+{
+ "successCount": 1,
+ "failCount": 1,
+ "invalidEmails": [
+   "fail@example.org"
+ ]
+}

@@ -53,7 +53,6 @@ module Iterable
     # Commerce Services
     # 
     def track_purchase(track_purchase_request)
-      raise Exceptions::ServiceException, "Must be a Iterable::Requests::TrackPurchase" unless user.is_a?(Iterable::Requests::TrackPurchase)
       Services::CommerceService.track_purchase(track_purchase_request)
     end
   end

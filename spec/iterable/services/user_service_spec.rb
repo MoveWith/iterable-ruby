@@ -48,12 +48,7 @@ describe Iterable::Services::UserService do
       error.message = 'Bad Request'
       error.response = OpenStruct.new({body: "User does not exist with that ID!"})
       RestClient.stub(:get).and_raise(error)
-      error_response = Iterable::Services::UserService.find_by_id(1)
-
-      expect(error_response).to be_kind_of(Iterable::Responses::Error)
-      expect(error_response.response).to eq "User does not exist with that ID!"
-      expect(error_response.code).to eq 400
-      expect(error_response.msg).to eq 'Bad Request'
+      expect { Iterable::Services::UserService.find_by_id(1) }.to raise_error(error)
     end
   end
 

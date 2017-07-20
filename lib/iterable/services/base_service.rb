@@ -21,8 +21,6 @@ module Iterable
           rescue
             Hashie::Mash.new JSON.parse(response.body)
           end
-        rescue RestClient::BadRequest => e
-          Iterable::Responses::Error.new(response: e.response.body, msg: e.message, code: 400)
         end
 
         def post(path, body = {}, params = {}, response_type = Iterable::Responses::General)
@@ -34,8 +32,6 @@ module Iterable
           rescue
             Hashie::Mash.new JSON.parse(response.body)
           end
-        rescue RestClient::BadRequest => e
-          Iterable::Responses::Error.new(response: e.response.body, msg: e.message, code: 400)
         end
 
         # Return required headers for making an http request with Iterable

@@ -19,6 +19,7 @@ module Iterable
         end
 
         def update(user)
+          raise Exceptions::ServiceException, "Must be a Iterable::Requests::UserUpdate" unless user.is_a?(Iterable::Requests::UserUpdate)
           post(Util::Config.get('endpoints.user_update'), user)
         end
 

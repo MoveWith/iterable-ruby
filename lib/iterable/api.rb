@@ -43,7 +43,6 @@ module Iterable
     end
 
     def user_update(user)
-      raise Exceptions::ServiceException, "Must be a Iterable::Requests::UserUpdate" unless user.is_a?(Iterable::Requests::UserUpdate)
       Services::UserService.update(user)
     end
 

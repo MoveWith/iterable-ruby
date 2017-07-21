@@ -20,6 +20,7 @@ module Iterable
           :user_by_id                     => 'users/byUserId/%s',
           :user_update                    => 'users/update',
           :user_subscriptions_update      => 'users/updateSubscriptions',
+          :user_fields                    => 'users/getFields',
 
           # subscriptions (lists)
           :lists                          => 'lists',

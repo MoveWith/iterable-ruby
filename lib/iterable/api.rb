@@ -46,6 +46,10 @@ module Iterable
       Services::UserService.update(user)
     end
 
+    def user_fields
+      Services::UserService.fields
+    end
+
     def user_subscriptions_update
     end
 

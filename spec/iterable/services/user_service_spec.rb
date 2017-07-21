@@ -52,22 +52,18 @@ describe Iterable::Services::UserService do
     end
   end
 
-  describe "#update" do
-    it 'fails for incorrect request' do 
-      expect{ Iterable::Services::UserService.update({}) }.to raise_error(Iterable::Exceptions::ServiceException, "Must be a Iterable::Requests::UserUpdate")
-    end
-    it "adds a user" do
-      user_update_request = Iterable::Requests::UserUpdate.new(JSON.parse(load_file('request_user_update.json')))
-      json = load_file('response_general.json')
+  describe "#fields" do
+    it "gets user fields" do
+      json = load_file('response_fields.json')
       net_http_resp = Net::HTTPResponse.new(1.0, 200, 'OK')
 
       response = RestClient::Response.create(json, net_http_resp, @request)
-      RestClient.stub(:post).and_return(response)
-      general_response = Iterable::Services::UserService.update(user_update_request)
-
-      expect(general_response).to be_kind_of(Iterable::Responses::General)
-      expect(general_response.code).to eq 200
-      expect(general_response.msg).to eq 'Success'
+      RestClient.stub(:get).and_return(response)
+      hashie_response = Iterable::Services::UserService.fields
+      
+      expect(hashie_response).to be_kind_of(Hashie::Mash)
+      expect(hashie_response.fields).to be_truthy
+      expect(hashie_response.fields['test']).to eq 'string'
     end
   end
 end

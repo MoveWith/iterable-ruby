@@ -1,0 +1,31 @@
+{
+  "fields":{
+    "test":"string",
+    "First Name":"string",
+    "phoneNumber":"string",
+    "Last Name":"string",
+    "email":"string",
+    "unsubscribedChannelIds":"long",
+    "Donation Type":"string",
+    "Occupation":"string",
+    "Employer":"string",
+    "emailListIds":"long",
+    "Donation_date":"date",
+    "Phone":"string",
+    "signupDate":"date",
+    "Source Code":"string",
+    "HPC":"double",
+    "Donation Name":"string",
+    "City":"string",
+    "profileUpdatedAt":"date",
+    "Donation Date":"long",
+    "signupSource":"string",
+    "unsubscribedMessageTypeIds":"long",
+    "Zip":"string",
+    "userId":"string",
+    "State":"string",
+    "MRC":"double",
+    "Revv ID":"long",
+    "Total Revenue":"string"
+  }
+}

@@ -23,6 +23,10 @@ module Iterable
           post(Util::Config.get('endpoints.user_update'), user)
         end
 
+        def fields
+          get(Util::Config.get('endpoints.user_fields'))
+        end
+
         private 
 
         def find_by(path)

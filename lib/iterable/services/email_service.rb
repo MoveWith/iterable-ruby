@@ -10,6 +10,9 @@ module Iterable
       class << self
         def send_email(request)
           raise Exceptions::ServiceException, "Must be a Iterable::Requests::TargetedEmail" unless request.is_a?(Iterable::Requests::TargetedEmail)
+          puts "********* DEBUG START"
+          puts request.to_json
+          puts "********* DEBUG END"
           post(Util::Config.get('endpoints.send_email'), request)
         end
       end

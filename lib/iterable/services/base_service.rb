@@ -26,12 +26,19 @@ module Iterable
         def post(path, body = {}, params = {}, response_type = Iterable::Responses::General)
           url = URI::join(Util::Config.get('endpoints.base_url'), path).to_s
           url = build_url(url, params)
+          puts "***** POST DEBUG"
+          puts "URL: #{url}"
           response = RestClient.post(url, body.to_json, get_headers())
+          puts "RESPONSE:"
+          puts response
           begin
             response_type.new JSON.parse(response.body)
           rescue
+            puts "ERROR"
+            puts response.inspect
             Hashie::Mash.new JSON.parse(response.body)
           end
+          puts "***** POST DEBUG"
         end
 
         # Return required headers for making an http request with Iterable
@@ -51,7 +58,7 @@ module Iterable
         # should not be URL encoded because this method will handle that
         # @param [String] url - The base url
         # @param [Hash] params - A hash with query parameters
-        # @return [String] - the url with query parameters hash 
+        # @return [String] - the url with query parameters hash
         def build_url(url, params = nil)
           if params.respond_to? :each
             params.each do |key, value|

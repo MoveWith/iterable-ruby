@@ -16,6 +16,7 @@ module Iterable
   autoload :DataFields, 'iterable/models/data_fields'
   autoload :ListDetails, 'iterable/models/list_details'
   autoload :CommerceItem, 'iterable/models/commerce_item'
+  autoload :Event, 'iterable/modes/event'
 
   module Responses
     autoload :Error, 'iterable/models/responses/error'
@@ -23,12 +24,14 @@ module Iterable
     autoload :Lists, 'iterable/models/responses/lists'
     autoload :Subscribe, 'iterable/models/responses/subscribe'
     autoload :User, 'iterable/models/responses/user'
+    autoload :Event, 'iterable/models/responses/event'
   end
 
   module Requests
     autoload :Subscribe, 'iterable/models/requests/subscribe'
     autoload :TrackPurchase, 'iterable/models/requests/track_purchase'
     autoload :UserUpdate, 'iterable/models/requests/user_update'
+    autoload :TrackEvent, 'iterable/models/requests/track_event'
   end
 
   module Services
@@ -36,11 +39,12 @@ module Iterable
     autoload :CommerceService, 'iterable/services/commerce_service'
     autoload :ListService, 'iterable/services/list_service'
     autoload :UserService, 'iterable/services/user_service'
-  end  
+    autoload :EventService, 'iterable/services/event_service'
+  end
 
   module Exceptions
     autoload :ServiceException, 'iterable/exceptions/service_exception'
-  end  
+  end
 
   module Util
     autoload :Config, 'iterable/util/config'

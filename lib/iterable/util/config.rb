@@ -15,6 +15,9 @@ module Iterable
         :endpoints => {
           :base_url                       => 'https://api.iterable.com:443/api/',
 
+          # events
+          :track_event                    => 'events/track'
+
           # subscribers (users)
           :user_by_email                  => 'users/%s',
           :user_by_id                     => 'users/byUserId/%s',
@@ -44,7 +47,7 @@ module Iterable
       class << self
         attr_accessor :props
 
-        def configure 
+        def configure
           yield props if block_given?
         end
 

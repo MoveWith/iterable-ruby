@@ -1,5 +1,5 @@
 module Iterable
-  class Event < Iterable::Base
+  class TrackedEvent < Iterable::Base
     property :email, required: true, coerce: String
     property :userId, coerce: String
     property :campaignId, coerce: String

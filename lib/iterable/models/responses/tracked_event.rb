@@ -1,6 +1,6 @@
 module Iterable
   module Responses
-    class Event < Iterable::Base
+    class TrackedEvent < Iterable::Base
       property :msg
       property :code
       property :params, coerce: Hashie::Mash

@@ -16,7 +16,7 @@ module Iterable
   autoload :DataFields, 'iterable/models/data_fields'
   autoload :ListDetails, 'iterable/models/list_details'
   autoload :CommerceItem, 'iterable/models/commerce_item'
-  autoload :TrackedEvent, 'iterable/modes/tracked_event'
+  autoload :TrackedEvent, 'iterable/models/tracked_event'
 
   module Responses
     autoload :Error, 'iterable/models/responses/error'

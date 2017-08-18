@@ -18,6 +18,9 @@ module Iterable
           # events
           :track_event                    => 'events/track',
 
+          # emails
+          :send_email                     => 'email/target',
+
           # subscribers (users)
           :user_by_email                  => 'users/%s',
           :user_by_id                     => 'users/byUserId/%s',

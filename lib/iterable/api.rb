@@ -21,6 +21,11 @@ module Iterable
       Services::EventService.track(track_event_request)
     end
 
+    # Email Services
+    def send_email(targeted_email_request)
+      Services::EmailService.send_email(targeted_email_request)
+    end
+
     #
     # List Services
     #

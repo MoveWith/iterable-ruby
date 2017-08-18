@@ -17,6 +17,7 @@ module Iterable
   autoload :ListDetails, 'iterable/models/list_details'
   autoload :CommerceItem, 'iterable/models/commerce_item'
   autoload :TrackedEvent, 'iterable/models/tracked_event'
+  autoload :TargetEmail, 'iterable/models/target_email'
 
   module Responses
     autoload :Error, 'iterable/models/responses/error'
@@ -25,6 +26,7 @@ module Iterable
     autoload :Subscribe, 'iterable/models/responses/subscribe'
     autoload :User, 'iterable/models/responses/user'
     autoload :TrackedEvent, 'iterable/models/responses/tracked_event'
+    autoload :TargetedEmail, 'iterable/models/responses/targeted_email'
   end
 
   module Requests
@@ -32,6 +34,7 @@ module Iterable
     autoload :TrackPurchase, 'iterable/models/requests/track_purchase'
     autoload :UserUpdate, 'iterable/models/requests/user_update'
     autoload :TrackEvent, 'iterable/models/requests/track_event'
+    autoload :TargetedEmail, 'iterable/models/requests/targeted_email'
   end
 
   module Services
@@ -40,6 +43,7 @@ module Iterable
     autoload :ListService, 'iterable/services/list_service'
     autoload :UserService, 'iterable/services/user_service'
     autoload :EventService, 'iterable/services/event_service'
+    autoload :EmailService, 'iterable/services/email_service'
   end
 
   module Exceptions

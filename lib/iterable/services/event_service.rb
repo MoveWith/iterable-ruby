@@ -1,5 +1,5 @@
 #
-# list_service.rb
+# event_service.rb
 # Iterable
 #
 # Copyright (c) 2017 MoveWith. All rights reserved.

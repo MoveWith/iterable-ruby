@@ -17,8 +17,8 @@ module Iterable
     end
 
     # Event Services
-    def track_event
-      puts "Tracked Event!!!"
+    def track_event(track_event_request)
+      Services::EventService.track(track_event_request)
     end
 
     #

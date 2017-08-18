@@ -16,7 +16,7 @@ module Iterable
           :base_url                       => 'https://api.iterable.com:443/api/',
 
           # events
-          :track_event                    => 'events/track'
+          :track_event                    => 'events/track',
 
           # subscribers (users)
           :user_by_email                  => 'users/%s',

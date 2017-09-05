@@ -33,6 +33,9 @@ module Iterable
           :lists                          => 'lists',
           :lists_subscribe                => 'lists/subscribe',
 
+          # message types
+          :message_types                  => 'messageTypes',
+
           # purchases (commerce)
           :track_purchase                 => 'commerce/trackPurchase',
         },

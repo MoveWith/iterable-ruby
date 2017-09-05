@@ -42,6 +42,13 @@ module Iterable
     end
 
     #
+    # MessageType Services
+    #
+    def message_types
+      Services::MessageTypeService.all
+    end
+
+    #
     # User Services
     #
     def user_by_email(email)

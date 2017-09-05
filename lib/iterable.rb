@@ -28,6 +28,7 @@ module Iterable
     autoload :TrackedEvent, 'iterable/models/responses/tracked_event'
     autoload :TargetedEmail, 'iterable/models/responses/targeted_email'
     autoload :SubscriptionUpdate, 'iterable/models/responses/subscription_update'
+    autoload :MessageTypes, 'iterable/models/responses/message_types'
   end
 
   module Requests
@@ -43,6 +44,7 @@ module Iterable
     autoload :BaseService, 'iterable/services/base_service'
     autoload :CommerceService, 'iterable/services/commerce_service'
     autoload :ListService, 'iterable/services/list_service'
+    autoload :MessageTypeService, 'iterable/services/message_type_service'
     autoload :UserService, 'iterable/services/user_service'
     autoload :EventService, 'iterable/services/event_service'
     autoload :EmailService, 'iterable/services/email_service'

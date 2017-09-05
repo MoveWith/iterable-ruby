@@ -6,7 +6,7 @@
 
 module Iterable
   module Services
-    class MessageType < BaseService
+    class MessageTypeService < BaseService
       class << self
         def all
           get(Util::Config.get('endpoints.message_types'), nil, Iterable::Responses::MessageTypes)

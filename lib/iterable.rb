@@ -18,6 +18,7 @@ module Iterable
   autoload :CommerceItem, 'iterable/models/commerce_item'
   autoload :TrackedEvent, 'iterable/models/tracked_event'
   autoload :TargetEmail, 'iterable/models/target_email'
+  autoload :MessageType, 'iterable/models/message_type'
 
   module Responses
     autoload :Error, 'iterable/models/responses/error'

@@ -74,12 +74,17 @@ module Iterable
     def unsubscribe_all(email)
       if !email.blank?
         # Get all message types
-        message_type_ids = []
-        subscription_request = Iterable::Requests::SubscriptionUpdate.new({
-          email: email,
-          unsubscribedMessageTypeIds: message_type_ids
-        })
-        user_update_subscription(subscription_request)
+        message_types = message_types
+        if message_types && message_types["messageTypes"]
+          message_type_ids = message_types.collect { |message_type| message_type["id"] }
+          if !message_type_ids.blank?
+            subscription_request = Iterable::Requests::SubscriptionUpdate.new({
+              email: email,
+              unsubscribedMessageTypeIds: message_type_ids
+            })
+            user_update_subscription(subscription_request)
+          end
+        end
       end
     end
 

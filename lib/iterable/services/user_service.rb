@@ -27,7 +27,12 @@ module Iterable
           get(Util::Config.get('endpoints.user_fields'))
         end
 
-        private 
+        def update_subscription(subscription_request)
+          raise Exceptions::ServiceException, "Must be a Iterable::Requests::SubscriptionUpdate" unless user.is_a?(Iterable::Requests::SubscriptionUpdate)
+          post(Util::Config.get('endpoints.user_update_subscriptions'), subscription_request)
+        end
+
+        private
 
         def find_by(path)
           get(path, nil, Iterable::Responses::User)

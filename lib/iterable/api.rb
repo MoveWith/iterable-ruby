@@ -60,7 +60,20 @@ module Iterable
       Services::UserService.fields
     end
 
-    def user_subscriptions_update
+    def user_update_subscriptions(subscription_request)
+      Services::UserService.update_subscription(subscription_request)
+    end
+
+    def unsubscribe_all(email)
+      if !email.blank?
+        # Get all message types
+        message_type_ids = []
+        subscription_request = Iterable::Requests::SubscriptionUpdate.new({
+          email: email,
+          unsubscribedMessageTypeIds: message_type_ids
+        })
+        user_update_subscription(subscription_request)
+      end
     end
 
     #

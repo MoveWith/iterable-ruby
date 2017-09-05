@@ -27,6 +27,7 @@ module Iterable
     autoload :User, 'iterable/models/responses/user'
     autoload :TrackedEvent, 'iterable/models/responses/tracked_event'
     autoload :TargetedEmail, 'iterable/models/responses/targeted_email'
+    autoload :SubscriptionUpdate, 'iterable/models/responses/subscription_update'
   end
 
   module Requests
@@ -35,6 +36,7 @@ module Iterable
     autoload :UserUpdate, 'iterable/models/requests/user_update'
     autoload :TrackEvent, 'iterable/models/requests/track_event'
     autoload :TargetedEmail, 'iterable/models/requests/targeted_email'
+    autoload :SubscriptionUpdate, 'iterable/models/requests/subscription_update'
   end
 
   module Services

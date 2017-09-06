@@ -29,10 +29,6 @@ module Iterable
 
         def update_subscription(subscription_request)
           raise Exceptions::ServiceException, "Must be a Iterable::Requests::SubscriptionUpdate" unless subscription_request.is_a?(Iterable::Requests::SubscriptionUpdate)
-          puts "***********************"
-          puts "POSTING REQUEST"
-          puts subscription_request
-          puts "***********************"
           post(Util::Config.get('endpoints.user_update_subscriptions'), subscription_request)
         end
 

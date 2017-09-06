@@ -68,20 +68,13 @@ module Iterable
     end
 
     def user_update_subscriptions(subscription_request)
-      puts "***********************"
-      puts "UPDATE SUBSCRIPTIONS"
-      puts subscription_request
-      puts "***********************"
       Services::UserService.update_subscription(subscription_request)
     end
 
     def unsubscribe_all(email)
-      puts "ITERABLE GEM EMAIL: #{email}"
       if !email.blank?
         # Get all message types
         iterable_message_types = message_types
-        puts "ITERABLE MESSAGE TYPES:"
-        puts iterable_message_types
         if iterable_message_types && iterable_message_types["messageTypes"]
           message_type_ids = iterable_message_types["messageTypes"].collect { |message_type| message_type["id"] }
           if !message_type_ids.blank?
@@ -89,10 +82,6 @@ module Iterable
               email: email,
               unsubscribedMessageTypeIds: message_type_ids
             })
-            puts "***********************"
-            puts "SUBSCRIPTION REQUEST"
-            puts subscription_request
-            puts "***********************"
             user_update_subscriptions(subscription_request)
           end
         end

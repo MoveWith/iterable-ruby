@@ -81,7 +81,7 @@ module Iterable
         # Get all message types
         iterable_message_types = message_types
         if iterable_message_types && iterable_message_types["messageTypes"]
-          message_type_ids = message_types.collect { |message_type| message_type["id"] }
+          message_type_ids = iterable_message_types.collect { |message_type| message_type["id"] }
           if !message_type_ids.blank?
             subscription_request = Iterable::Requests::SubscriptionUpdate.new({
               email: email,

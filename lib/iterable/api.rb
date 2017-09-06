@@ -42,6 +42,13 @@ module Iterable
     end
 
     #
+    # Template Services
+    #
+    def lists
+      Services::TemplateService.all
+    end
+
+    #
     # MessageType Services
     #
     def message_types

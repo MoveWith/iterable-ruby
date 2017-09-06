@@ -36,6 +36,9 @@ module Iterable
           # message types
           :message_types                  => 'messageTypes',
 
+          # templates
+          :templates                      => 'templates',
+
           # purchases (commerce)
           :track_purchase                 => 'commerce/trackPurchase',
         },

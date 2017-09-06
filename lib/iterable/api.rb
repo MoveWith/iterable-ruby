@@ -76,10 +76,11 @@ module Iterable
     end
 
     def unsubscribe_all(email)
+      puts "ITERABLE GEM EMAIL: #{email}"
       if !email.blank?
         # Get all message types
-        message_types = message_types
-        if message_types && message_types["messageTypes"]
+        iterable_message_types = message_types
+        if iterable_message_types && iterable_message_types["messageTypes"]
           message_type_ids = message_types.collect { |message_type| message_type["id"] }
           if !message_type_ids.blank?
             subscription_request = Iterable::Requests::SubscriptionUpdate.new({

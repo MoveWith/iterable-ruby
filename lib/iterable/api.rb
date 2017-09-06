@@ -44,7 +44,7 @@ module Iterable
     #
     # Template Services
     #
-    def lists
+    def templates
       Services::TemplateService.all
     end
 

@@ -68,6 +68,10 @@ module Iterable
     end
 
     def user_update_subscriptions(subscription_request)
+      puts "***********************"
+      puts "UPDATE SUBSCRIPTIONS"
+      puts subscription_request
+      puts "***********************"
       Services::UserService.update_subscription(subscription_request)
     end
 
@@ -82,6 +86,10 @@ module Iterable
               email: email,
               unsubscribedMessageTypeIds: message_type_ids
             })
+            puts "***********************"
+            puts "SUBSCRIPTION REQUEST"
+            puts subscription_request
+            puts "***********************"
             user_update_subscription(subscription_request)
           end
         end

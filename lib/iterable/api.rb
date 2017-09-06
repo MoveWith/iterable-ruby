@@ -93,7 +93,7 @@ module Iterable
             puts "SUBSCRIPTION REQUEST"
             puts subscription_request
             puts "***********************"
-            user_update_subscription(subscription_request)
+            user_update_subscriptions(subscription_request)
           end
         end
       end

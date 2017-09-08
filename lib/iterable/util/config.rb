@@ -32,6 +32,7 @@ module Iterable
           # subscriptions (lists)
           :lists                          => 'lists',
           :lists_subscribe                => 'lists/subscribe',
+          :lists_unsubscribe                => 'lists/unsubscribe',
 
           # message types
           :message_types                  => 'messageTypes',

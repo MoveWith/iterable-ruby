@@ -21,6 +21,11 @@ module Iterable
           request = Iterable::Requests::Subscribe.new(listId: list_id, subscribers: subscribers)
           post(Util::Config.get('endpoints.lists_subscribe'), request, nil, Iterable::Responses::Subscribe)
         end
+
+        def unsubscribe(list_id, subscribers)
+          request = Iterable::Requests::Unsubscribe.new(listId: list_id, subscribers: subscribers)
+          post(Util::Config.get('endpoints.lists_unsubscribe'), request, nil, Iterable::Responses::Unsubscribe)
+        end
       end
     end
   end

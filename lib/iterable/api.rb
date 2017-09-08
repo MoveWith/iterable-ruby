@@ -37,6 +37,10 @@ module Iterable
       Services::ListService.subscribe(list_id, subscribers)
     end
 
+    def lists_unsubscribe(list_id, subscribers)
+      Services::ListService.unsubscribe(list_id, subscribers)
+    end
+
     def list_by_id(list_id)
       Services::ListService.find_by_id(list_id)
     end

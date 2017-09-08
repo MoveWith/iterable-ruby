@@ -26,6 +26,7 @@ module Iterable
     autoload :General, 'iterable/models/responses/general'
     autoload :Lists, 'iterable/models/responses/lists'
     autoload :Subscribe, 'iterable/models/responses/subscribe'
+    autoload :Unsubscribe, 'iterable/models/responses/unsubscribe'
     autoload :User, 'iterable/models/responses/user'
     autoload :TrackedEvent, 'iterable/models/responses/tracked_event'
     autoload :TargetedEmail, 'iterable/models/responses/targeted_email'
@@ -36,6 +37,7 @@ module Iterable
 
   module Requests
     autoload :Subscribe, 'iterable/models/requests/subscribe'
+    autoload :Unsubscribe, 'iterable/models/requests/unsubscribe'
     autoload :TrackPurchase, 'iterable/models/requests/track_purchase'
     autoload :UserUpdate, 'iterable/models/requests/user_update'
     autoload :TrackEvent, 'iterable/models/requests/track_event'

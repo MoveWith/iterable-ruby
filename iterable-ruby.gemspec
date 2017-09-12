@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'iterable/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "iterable-api"
+  spec.name          = "iterable-ruby"
   spec.version       = Iterable::VERSION
-  spec.authors       = ["Iterable" , "Revv", "Kyle Schutt"]
-  spec.email         = ["info@revv.co"]
+  spec.authors       = ["Iterable" , "MoveWith", "Matt Brand"]
+  spec.email         = ["info@movewith.com"]
 
   spec.summary       = %q{Ruby Library for interactions with the Iterable API}
-  spec.homepage      = "https://github.com/revvco/iterable-api"
+  spec.homepage      = "https://github.com/movewith/iterable-api"
   spec.license       = "MIT"
 
   spec.files         = Dir['lib/**/*.rb']
@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  
+
   spec.add_runtime_dependency("rest-client", '< 4.0', '>= 1.6.7')
   spec.add_runtime_dependency("json", '~> 1.8', '>= 1.8.1')
   spec.add_runtime_dependency('mime-types', '< 4.0', '>= 1.25.1')

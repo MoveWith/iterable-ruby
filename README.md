@@ -1,7 +1,5 @@
 # Iterable
 
-[![Build Status](https://travis-ci.org/revvco/iterable-api.svg?branch=master)](https://travis-ci.org/revvco/iterable-api) [![Gem Version](https://badge.fury.io/rb/iterable-api.svg)](https://badge.fury.io/rb/iterable-api) [![Code Climate](https://codeclimate.com/github/revvco/iterable-api/badges/gpa.svg)](https://codeclimate.com/github/revvco/iterable-api)
-
 A Ruby wrapper for the Iterable API. Documentation can be found [here](https://api.iterable.com/api/docs).
 
 ## Installation
@@ -9,7 +7,7 @@ A Ruby wrapper for the Iterable API. Documentation can be found [here](https://a
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'iterable-api', require: 'iterable'
+gem 'iterable-ruby', require: 'iterable'
 ```
 
 And then execute:
@@ -18,14 +16,14 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install iterable-api
+    $ gem install iterable-ruby
 
 ## Usage
 
 ### Client
 
 ```ruby
-require 'iterable-api`
+require 'iterable-ruby`
 
 client = Iterable::Api.new('YOUR_API_KEY')
 client.lists
@@ -34,17 +32,64 @@ client.lists
 ### Supported Endpoints
 
 All responses are sent back as `Hashie` objects
+#### Emails
+* `email/target` - send a targeted email
+```ruby
+client = Iterable::Api.new('YOUR_API_KEY')
+client.send_email(Iterable::Requests::TargetedEmail)
+```
+
+#### Events
+* `events/track` - track an event
+```ruby
+client = Iterable::Api.new('YOUR_API_KEY')
+client.track_event(Iterable::Requests::TrackEvent)
+```
 
 #### Lists
 
 * `lists` - return all lists
 * `lists/subscribe` -  subscribe a user to a list
+```ruby
+client = Iterable::Api.new('YOUR_API_KEY')
+client.lists_subscribe(list_id, [Iterable::User])
+```
+* `lists/unsubscribe` -  unsubscribe a user to a list
+```ruby
+client = Iterable::Api.new('YOUR_API_KEY')
+client.lists_unsubscribe(list_id, [Iterable::User])
+```
+
+#### Message Types
+* `messageTypes` - return all Message Types
+```ruby
+client = Iterable::Api.new('YOUR_API_KEY')
+client.message_types
+
+#### Templates
+* `templates` - return all templates
+```ruby
+client = Iterable::Api.new('YOUR_API_KEY')
+client.templates
+```
 
 #### Users
 
+* `users/getFields` - get user fields
 * `users/{email}` - find a user by email
 * `users/{id}` - find a user by id
 * `users/update` - update a user
+```ruby
+client = Iterable::Api.new('YOUR_API_KEY')
+client.user_update(Iterable::User)
+```
+* `users/updateSubscriptions` - update a user's subscriptions
+```ruby
+client = Iterable::Api.new('YOUR_API_KEY')
+client.user_update_subscriptions(Iterable::Requests::SubscriptionUpdate)
+
+client.unsubscribe_all("email_address")
+```
 
 #### Commerce
 
@@ -58,7 +103,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/iterable-api.
+Bug reports and pull requests are welcome on GitHub at https://github.com/movewith/iterable-ruby.
 
 
 ## License

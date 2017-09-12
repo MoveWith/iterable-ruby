@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["info@movewith.com"]
 
   spec.summary       = %q{Ruby Library for interactions with the Iterable API}
-  spec.homepage      = "https://github.com/movewith/iterable-api"
+  spec.homepage      = "https://github.com/movewith/iterable-ruby"
   spec.license       = "MIT"
 
   spec.files         = Dir['lib/**/*.rb']

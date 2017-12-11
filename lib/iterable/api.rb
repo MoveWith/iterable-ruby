@@ -88,10 +88,12 @@ module Iterable
         iterable_message_types = message_types
         if iterable_message_types && iterable_message_types["messageTypes"]
           message_type_ids = iterable_message_types["messageTypes"].collect { |message_type| message_type["id"] }
+          channel_ids = iterable_message_types["messageTypes"].collect { |message_type| message_type["channelId"] }
           if !message_type_ids.blank?
             subscription_request = Iterable::Requests::SubscriptionUpdate.new({
               email: email,
-              unsubscribedMessageTypeIds: message_type_ids
+              unsubscribedMessageTypeIds: message_type_ids,
+              unsubscribedChannelIds: channel_ids
             })
             user_update_subscriptions(subscription_request)
           end

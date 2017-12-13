@@ -82,10 +82,10 @@ module Iterable
       Services::UserService.update_subscription(subscription_request)
     end
 
-    def unsubscribe_all(email)
+    def unsubscribe_all(email, preloaded_message_types=nil)
       if !email.blank?
         # Get all message types
-        iterable_message_types = message_types
+        iterable_message_types = preloaded_message_types ? preloaded_message_types : message_types
         if iterable_message_types && iterable_message_types["messageTypes"]
           message_type_ids = iterable_message_types["messageTypes"].collect { |message_type| message_type["id"] }
           channel_ids = iterable_message_types["messageTypes"].collect { |message_type| message_type["channelId"] }

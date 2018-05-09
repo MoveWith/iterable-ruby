@@ -2,7 +2,7 @@
 # api.rb
 # Iterable
 #
-# Copyright (c) 2017 MoveWith. All rights reserved.
+# Copyright (c) 2018 MoveWith. All rights reserved.
 
 module Iterable
   class Api
@@ -39,6 +39,10 @@ module Iterable
 
     def lists_unsubscribe(list_id, subscribers)
       Services::ListService.unsubscribe(list_id, subscribers)
+    end
+
+    def list_create(list_name)
+      Services::ListService.create(list_name)
     end
 
     def list_by_id(list_id)

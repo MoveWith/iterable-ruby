@@ -2,7 +2,7 @@
 # list_service.rb
 # Iterable
 #
-# Copyright (c) 2017 MoveWith. All rights reserved.
+# Copyright (c) 2018 MoveWith. All rights reserved.
 
 module Iterable
   module Services
@@ -26,6 +26,12 @@ module Iterable
           request = Iterable::Requests::Unsubscribe.new(listId: list_id, subscribers: subscribers)
           post(Util::Config.get('endpoints.lists_unsubscribe'), request, nil, Iterable::Responses::Unsubscribe)
         end
+
+        def create(list_name)
+          request = Iterable::Requests::ListCreate.new(listName: list_name)
+          post(Util::Config.get('endpoints.list_create'), request, nil, Iterable::Responses::ListCreate)
+        end
+
       end
     end
   end

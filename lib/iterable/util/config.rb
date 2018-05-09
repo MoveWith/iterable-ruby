@@ -2,7 +2,7 @@
 # config.rb
 # Iterable
 #
-# Copyright (c) 2017 MoveWith. All rights reserved.
+# Copyright (c) 2018 MoveWith. All rights reserved.
 
 module Iterable
   module Util
@@ -32,7 +32,8 @@ module Iterable
           # subscriptions (lists)
           :lists                          => 'lists',
           :lists_subscribe                => 'lists/subscribe',
-          :lists_unsubscribe                => 'lists/unsubscribe',
+          :lists_unsubscribe              => 'lists/unsubscribe',
+          :list_create                    => 'lists',
 
           # message types
           :message_types                  => 'messageTypes',

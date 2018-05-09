@@ -2,7 +2,7 @@
 # email_service.rb
 # Iterable
 #
-# Copyright (c) 2017 MoveWith. All rights reserved.
+# Copyright (c) 2018 MoveWith. All rights reserved.
 
 module Iterable
   module Services

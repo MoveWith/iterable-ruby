@@ -25,6 +25,7 @@ module Iterable
     autoload :Error, 'iterable/models/responses/error'
     autoload :General, 'iterable/models/responses/general'
     autoload :Lists, 'iterable/models/responses/lists'
+    autoload :ListCreate, 'iterable/models/responses/list_create'
     autoload :Subscribe, 'iterable/models/responses/subscribe'
     autoload :Unsubscribe, 'iterable/models/responses/unsubscribe'
     autoload :User, 'iterable/models/responses/user'
@@ -43,6 +44,7 @@ module Iterable
     autoload :TrackEvent, 'iterable/models/requests/track_event'
     autoload :TargetedEmail, 'iterable/models/requests/targeted_email'
     autoload :SubscriptionUpdate, 'iterable/models/requests/subscription_update'
+    autoload :ListCreate, 'iterable/models/requests/list_create'
   end
 
   module Services

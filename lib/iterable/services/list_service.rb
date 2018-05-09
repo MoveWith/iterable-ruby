@@ -28,7 +28,7 @@ module Iterable
         end
 
         def create(list_name)
-          request = Iterable::Requests::ListCreate.new(listName: list_name)
+          request = Iterable::Requests::ListCreate.new(name: list_name)
           post(Util::Config.get('endpoints.list_create'), request, nil, Iterable::Responses::ListCreate)
         end
 

@@ -32,6 +32,12 @@ module Iterable
           post(Util::Config.get('endpoints.list_create'), request, nil, Iterable::Responses::ListCreate)
         end
 
+        def get_users(list_id)
+          raise Exceptions::ServiceException, "Id is required." if list_id.nil?
+          request = Iterable::Requests::List.new(listId: list_id)
+          get(Util::Config.get('endpoints.list_users'), request, nil)
+        end
+
       end
     end
   end

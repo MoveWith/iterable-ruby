@@ -44,6 +44,7 @@ module Iterable
     autoload :TrackEvent, 'iterable/models/requests/track_event'
     autoload :TargetedEmail, 'iterable/models/requests/targeted_email'
     autoload :SubscriptionUpdate, 'iterable/models/requests/subscription_update'
+    autoload :List, 'iterable/models/requests/list'
     autoload :ListCreate, 'iterable/models/requests/list_create'
   end
 

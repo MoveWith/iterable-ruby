@@ -49,6 +49,10 @@ module Iterable
       Services::ListService.find_by_id(list_id)
     end
 
+    def list_users_by_id(list_id)
+      Services::ListService.get_users(list_id)
+    end
+
     #
     # Template Services
     #

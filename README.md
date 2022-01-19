@@ -65,6 +65,7 @@ client.lists_unsubscribe(list_id, [Iterable::User])
 ```ruby
 client = Iterable::Api.new('YOUR_API_KEY')
 client.message_types
+```
 
 #### Templates
 * `templates` - return all templates
